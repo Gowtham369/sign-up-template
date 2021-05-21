@@ -1,0 +1,100 @@
+.signup-wrapper {
+  max-height: 100vh;
+  padding: 218px 354px 0 336px;
+  padding: 10% 20% 0 19%;
+  text-align: left;
+  width: 45%;
+  min-width: 336px;
+  .on-step {
+    font: normal normal bold 13px/25px Roboto;
+    position: absolute;
+    color: #333333;
+    top: 42px;
+    right: 37%;
+    .dot {
+      margin-right: 10px;
+      width: 2px;
+      height: 2px;
+      border: 1px solid #777777;
+      display: inline-block;
+      background-color: #777777;
+      border-radius: 4px;
+      margin-bottom: 2.5px;
+      &:first-child {
+        margin-left: 15px;
+        border: 1px solid black;
+        background-color: black;
+      }
+    }
+  }
+  .title {
+    font: normal normal bold 32px/38px Roboto;
+    letter-spacing: 0.26px;
+    margin-bottom: 40px;
+  }
+  .description {
+    font: normal normal 500 15px/30px Roboto;
+    margin-bottom: 43px;
+  }
+  .form-wrapper {
+    > form {
+      display: flex;
+      flex-direction: column;
+      > div {
+        margin-bottom: 20px;
+      }
+      .MuiFormControl-root {
+        width: 100%;
+        .MuiInputBase-root {
+          height: 50px;
+          text-align: left;
+        }
+        .MuiFormHelperText-root {
+          &.Mui-error {
+            color: #f44336;
+          }
+        }
+        .Mui-focused {
+          color: initial;
+        }
+      }
+      .MuiButtonBase-root {
+        height: 50px;
+      }
+    }
+  }
+}
+
+.side-plane {
+  width: 38%;
+  max-width: 38%;
+  height: 100vh;
+  background-color: #286efa;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 6%;
+  color: #ffffff;
+  .title {
+    margin-top: 150px;
+    font: normal normal normal 32px/38px Roboto;
+  }
+  .description {
+    font: normal normal normal 18px/30px Roboto;
+    max-width: 340px;
+    overflow: visible;
+    margin-top: 90px;
+    text-align: left;
+  }
+}
+
+.muted-text-message {
+  font: normal normal normal 12px/20px Roboto;
+  color: #777777;
+}
+
+.terms-and-service {
+  font: normal normal normal 13px/25px Roboto;
+  margin-top: 52px;
+}
