@@ -21,14 +21,16 @@ export default function Signup() {
   };
   const handleEmailChange = (e) => {
     if (!/^([a-zA-Z0-9\.-]+)@([a-zA-Z0-9-]+).([a-z]{2,8})(.[a-z]{2,8})$/.test(e.target.value)) {
-      setMail({ error: "Please enter a valid email address" });
+      setMail({ ...mail, error: "Please enter a valid email address" });
     } else setMail({ mail: e.target.value, error: "" });
   };
   const handleUserTypeChange = (e) => {
     setUserType(e.target.value);
   };
   const handlePasswordChange = (e) => {
-    setPassword(e.target.value);
+    (e.target.value.length < 8)
+      ? setPassword({ ...password, errorStatus: true })
+      : setPassword({ password: e.target.value, errorStatus: false });
   };
   const handleClickShowPassword = () => {
     setShowPassword(!showPassword);
@@ -76,8 +78,8 @@ export default function Signup() {
             <OutlinedInput
               id="outlined-adornment-password"
               type={showPassword ? "text" : "password"}
-              value={password}
               onChange={handlePasswordChange}
+              error={password.errorStatus}
               endAdornment={
                 <InputAdornment position="end">
                   <IconButton
@@ -92,9 +94,9 @@ export default function Signup() {
               }
               labelWidth={70}
             />
-            <div className="muted-text-message">Minimum 8 characters</div>
+            <div className={`muted-text-message ${password.errorStatus && "error-message"}`}>Minimum 8 characters</div>
           </FormControl>
-          <Button variant="contained" color="primary">
+          <Button disabled={!(name && mail && userType && password && !mail?.error && !password.errorStatus)} variant="contained" color="primary">
             Next
           </Button>
           <div className="terms-and-service">
