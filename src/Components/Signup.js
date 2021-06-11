@@ -60,8 +60,7 @@ export default function Signup(props) {
                         <div className="error-message">{mail?.error}</div>
                     </div>
                     <div className="field-group">
-                        <input id="dropdown" className="d-none" />
-                        <div onClick={()=>setDropdownActive(!dropdownActive)} onBlur={()=>setDropdownActive(false)} htmlFor="dropdown" className={`select-button ${dropdownActive ? "select-button-active" : ""}`}>
+                        <div tabIndex="0" onClick={()=>setDropdownActive(!dropdownActive)} onKeyDown={()=>setDropdownActive(!dropdownActive)} onBlur={()=>setDropdownActive(false)} htmlFor="dropdown" className={`select-button ${dropdownActive ? "select-button-active" : ""}`}>
                             <div>{userType ? userType : "I would describe my user type as"}</div>
                             <ExpandMoreIcon />
                         </div>
